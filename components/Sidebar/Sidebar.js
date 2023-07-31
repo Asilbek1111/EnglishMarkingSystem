@@ -51,14 +51,7 @@ export default function Sidebar() {
             <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
               <div className="flex flex-wrap">
                 <div className="w-6/12">
-                  <Link href="/">
-                    <a
-                      href="#pablo"
-                      className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
-                    >
-                      Simple
-                    </a>
-                  </Link>
+                  <Link href="/">Simple</Link>
                 </div>
                 <div className="w-6/12 flex justify-end">
                   <button
@@ -92,64 +85,60 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
-                <Link href="/">
-                  <a
-                    href="#pablo"
+                <Link
+                  href="/"
+                  className={
+                    "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
+                    (router.pathname.indexOf("/admin/settings") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
                     className={
-                      "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
+                      "fas fa-tools mr-2 text-sm " +
                       (router.pathname.indexOf("/admin/settings") !== -1
-                        ? "text-lightBlue-500 hover:text-lightBlue-600"
-                        : "text-blueGray-700 hover:text-blueGray-500")
+                        ? "opacity-75"
+                        : "text-blueGray-300")
                     }
-                  >
-                    <i
-                      className={
-                        "fas fa-tools mr-2 text-sm " +
-                        (router.pathname.indexOf("/admin/settings") !== -1
-                          ? "opacity-75"
-                          : "text-blueGray-300")
-                      }
-                    ></i>{" "}
-                    Main page
-                  </a>
+                  ></i>{" "}
+                  Main page
                 </Link>
               </li>
 
               <li className="items-center">
-                <Link href="/tables">
-                  <a
-                    href="#pablo"
+                <Link
+                  href="/tables"
+                  className={
+                    "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
+                    (router.pathname.indexOf("/admin/tables") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
                     className={
-                      "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
+                      "fas fa-table mr-2 text-sm " +
                       (router.pathname.indexOf("/admin/tables") !== -1
-                        ? "text-lightBlue-500 hover:text-lightBlue-600"
-                        : "text-blueGray-700 hover:text-blueGray-500")
+                        ? "opacity-75"
+                        : "text-blueGray-300")
                     }
-                  >
-                    <i
-                      className={
-                        "fas fa-table mr-2 text-sm " +
-                        (router.pathname.indexOf("/admin/tables") !== -1
-                          ? "opacity-75"
-                          : "text-blueGray-300")
-                      }
-                    ></i>{" "}
-                    Marking
-                  </a>
+                  ></i>
+                  Marking
                 </Link>
               </li>
 
               <li className="items-center">
-                <Link href="/AddHotel">
-                  <a
-                    href="#pablo"
-                    className={
-                      "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
-                      (router.pathname.indexOf("/admin/tables") !== -1
-                        ? "text-lightBlue-500 hover:text-lightBlue-600"
-                        : "text-blueGray-700 hover:text-blueGray-500")
-                    }
-                  >
+                <Link
+                  href="/AddHotel"
+                  className={
+                    "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
+                    (router.pathname.indexOf("/admin/tables") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                 
                     <i
                       className={
                         "fas fa-table mr-2 text-sm " +
@@ -159,7 +148,7 @@ export default function Sidebar() {
                       }
                     ></i>{" "}
                     Message
-                  </a>
+                
                 </Link>
               </li>
             </ul>

@@ -46,7 +46,7 @@ setFail(false)
                 <input onChange={(e)=>setLogin(e.target.value)} className="border-DarkBlue border-2 text-center rounded-md md:w-96 focus:outline-none pl-2 py-1" placeholder="Login" />
                 </div>
                 <div className="flex justify-center">
-                <input onChange={(e)=>setPassword(e.target.value)} className="border-DarkBlue mt-4 md:w-96 border-2 text-center rounded-md focus:outline-none pl-2 py-1" placeholder="Parol" />
+                <input type="password" onChange={(e)=>setPassword(e.target.value)} className="border-DarkBlue mt-4 md:w-96 border-2 text-center rounded-md focus:outline-none pl-2 py-1" placeholder="Parol" />
                 </div>
                 <div className="flex justify-center">
                     <button className="rounded-md my-4 bg-DarkBlue text-white text-center p-2" onClick={Submit}>Submit</button>
