@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Simple from "./Simple";
-import StarIcon from "@material-ui/icons/Star";
 import axios from "../axios";
-import DeleteIcon from "@material-ui/icons/Delete";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import Delete from "@material-ui/icons/Delete";
+
 import SweetAlert from "react-bootstrap-sweetalert";
 import Allert from "../components/alertSlider";
 const Gallery = () => {

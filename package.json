@@ -10,8 +10,6 @@
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@material-tailwind/react": "^0.3.4",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/utils": "^4.11.2",
     "@popperjs/core": "^2.9.2",
     "axios": "^0.21.1",
     "chart.js": "^3.3.2",

@@ -1,6 +1,5 @@
 import react, {useState, useEffect} from 'react'
 import Simple from './Simple'
-import InputGroup from '../components/InputGroup/InputGroup'
 import axios from '../axios'
 import router from 'next/router'
 import SweetAlert  from 'react-bootstrap-sweetalert'
