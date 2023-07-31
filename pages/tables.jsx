@@ -1,12 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { LangContext } from "../contexts/context";
 import Simple from "./Simple";
 
 function Tables() {
-  const [fCoin, setFCoin] = useState(0);
-  const [oCoin, setOCoin] = useState(Number(0));
-  const [gCoin, setGCoin] = useState(Number(0));
+  const {
+    fCoin,
+    setFCoin,
+    oCoin,
+    setOCoin,
+    gCoin,
+    setGCoin,
+    fCoinToday,
+    setFCoinToday,
+    oCoinToday,
+    setOCoinToday,
+    gCoinToday,
+    setGCoinToday,
+  } = useContext(LangContext);
 
-  let farangiz = 0;
   useEffect(() => {
     if (localStorage.getItem("fcoin") == null) {
       localStorage.setItem("fcoin", fCoin);
@@ -51,13 +62,16 @@ function Tables() {
                           Name
                         </th>
                         <th scope="col" className="px-4 py-3 text-center">
-                          Coins
+                          Monthly Coins
                         </th>
                         <th scope="col" className="px-4 py-3 text-center">
-                          Qo'shish
+                          Today's Coins
                         </th>
                         <th scope="col" className="px-4 py-3 text-center">
-                          Ayirish
+                          Plus
+                        </th>
+                        <th scope="col" className="px-4 py-3 text-center">
+                          Minus
                         </th>
                         <th scope="col" className="px-4 py-3">
                           <span className="sr-only">Actions</span>
@@ -75,10 +89,13 @@ function Tables() {
                         </th>
                         <td className="px-4 py-3 text-center">Farangiz</td>
                         <td className="px-4 py-3 text-center">{fCoin}</td>
+                        <td className="px-4 py-3 text-center">{fCoinToday}</td>
+
                         <td className="px-4 py-3 max-w-[12rem] truncate flex justify-evenly items-center">
                           <button
                             onClick={() => {
                               setFCoin((prev) => Number(prev) + Number(1));
+                              setFCoinToday((prev) => Number(prev) + Number(1));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -87,6 +104,7 @@ function Tables() {
                           <button
                             onClick={() => {
                               setFCoin((prev) => Number(prev) + Number(2));
+                              setFCoinToday((prev) => Number(prev) + Number(2));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -95,6 +113,7 @@ function Tables() {
                           <button
                             onClick={() => {
                               setFCoin((prev) => Number(prev) + Number(5));
+                              setFCoinToday((prev) => Number(prev) + Number(5));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -105,6 +124,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setFCoin((prev) => Number(prev) + Number(-1));
+                              setFCoinToday(
+                                (prev) => Number(prev) + Number(-1)
+                              );
                             }}
                             className="w-['fit-content'] mr-5 bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -113,6 +135,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setFCoin((prev) => Number(prev) + Number(-2));
+                              setFCoinToday(
+                                (prev) => Number(prev) + Number(-2)
+                              );
                             }}
                             className="w-['fit-content'] mr-5 bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -121,6 +146,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setFCoin((prev) => Number(prev) + Number(-5));
+                              setFCoinToday(
+                                (prev) => Number(prev) + Number(-5)
+                              );
                             }}
                             className="w-['fit-content'] bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -138,10 +166,13 @@ function Tables() {
                         </th>
                         <td className="px-4 py-3 text-center">Og'abek</td>
                         <td className="px-4 py-3 text-center">{oCoin}</td>
+                        <td className="px-4 py-3 text-center">{oCoinToday}</td>
+
                         <td className="px-4 py-3 max-w-[12rem] truncate flex justify-evenly items-center">
                           <button
                             onClick={() => {
                               setOCoin((prev) => Number(prev) + Number(1));
+                              setOCoinToday((prev) => Number(prev) + Number(1));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -150,6 +181,7 @@ function Tables() {
                           <button
                             onClick={() => {
                               setOCoin((prev) => Number(prev) + Number(2));
+                              setOCoinToday((prev) => Number(prev) + Number(2));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -158,6 +190,7 @@ function Tables() {
                           <button
                             onClick={() => {
                               setOCoin((prev) => Number(prev) + Number(5));
+                              setOCoinToday((prev) => Number(prev) + Number(5));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -168,6 +201,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setOCoin((prev) => Number(prev) + Number(-1));
+                              setOCoinToday(
+                                (prev) => Number(prev) + Number(-1)
+                              );
                             }}
                             className="w-['fit-content'] mr-5 bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -176,6 +212,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setOCoin((prev) => Number(prev) + Number(-2));
+                              setOCoinToday(
+                                (prev) => Number(prev) + Number(-2)
+                              );
                             }}
                             className="w-['fit-content'] mr-5 bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -184,6 +223,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setOCoin((prev) => Number(prev) + Number(-5));
+                              setOCoinToday(
+                                (prev) => Number(prev) + Number(-5)
+                              );
                             }}
                             className="w-['fit-content'] bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -202,10 +244,13 @@ function Tables() {
                         </th>
                         <td className="px-4 py-3 text-center">Gulizar</td>
                         <td className="px-4 py-3 text-center">{gCoin}</td>
+                        <td className="px-4 py-3 text-center">{gCoinToday}</td>
+
                         <td className="px-4 py-3 max-w-[12rem] truncate flex justify-evenly items-center">
                           <button
                             onClick={() => {
                               setGCoin((prev) => Number(prev) + Number(1));
+                              setGCoinToday((prev) => Number(prev) + Number(1));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -214,6 +259,7 @@ function Tables() {
                           <button
                             onClick={() => {
                               setGCoin((prev) => Number(prev) + Number(2));
+                              setGCoinToday((prev) => Number(prev) + Number(2));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -222,6 +268,7 @@ function Tables() {
                           <button
                             onClick={() => {
                               setGCoin((prev) => Number(prev) + Number(5));
+                              setGCoinToday((prev) => Number(prev) + Number(5));
                             }}
                             className="w-['fit-content'] bg-green-500 px-3 py-1 rounded-md text-center text-white hover:bg-green-600 transition-all border-0"
                           >
@@ -232,6 +279,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setGCoin((prev) => Number(prev) + Number(-1));
+                              setGCoinToday(
+                                (prev) => Number(prev) + Number(-1)
+                              );
                             }}
                             className="w-['fit-content'] mr-5 bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -240,6 +290,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setGCoin((prev) => Number(prev) + Number(-2));
+                              setGCoinToday(
+                                (prev) => Number(prev) + Number(-2)
+                              );
                             }}
                             className="w-['fit-content'] mr-5 bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
@@ -248,6 +301,9 @@ function Tables() {
                           <button
                             onClick={() => {
                               setGCoin((prev) => Number(prev) + Number(-5));
+                              setGCoinToday(
+                                (prev) => Number(prev) + Number(-5)
+                              );
                             }}
                             className="w-['fit-content'] bg-red-600 px-3 py-1 rounded-md text-center text-white hover:bg-red-700 transition-all border-0"
                           >
