@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "react-scripts --openssl-legacy-provider start"
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",
